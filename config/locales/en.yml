@@ -1,0 +1,15 @@
+en:
+  public:
+    404:
+      title: "The page you were looking for doesn't exist (404)"
+      page: "The page you were looking for doesn't exist."
+      you: "You may have mistyped the address or the page may have moved."
+      if: "If you are the application owner check the logs for more information."
+    422:
+      title: "The change you wanted was rejected (422)"
+      the: "The change you wanted was rejected."
+      may: "Maybe you tried to change something you didn't have access to."
+    500:
+      title: "We're sorry, but something went wrong (500)"
+      we: "We're sorry, but something went wrong."
+
