@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%= yield :title %></title>
+    <%= render "layouts/rails_default" %>
+  </head>
+  <body class="fixed-nav sticky-footer bg-dark" id="page-top">
+    <%= render "layouts/admin/left_bar_admin" %>
+    <div class="content-wrapper">
+      <div class="container-fluid">
+        <%= yield %>
+      </div>
+      <%= render "layouts/admin/footer_admin" %>
+    </div>
+  </body>
+</html>
