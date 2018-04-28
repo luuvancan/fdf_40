@@ -10,13 +10,10 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require bootstrap-sprockets
 //= require rails-ujs
-//= require turbolinks
+//= require jquery
 //= require i18n
 //= require i18n.js
 //= require i18n/translations
-@import 'boostrap.bunble.min';
-@import 'cable';
-@import 'jquery.min';
+//= require_tree .
+//= require_self

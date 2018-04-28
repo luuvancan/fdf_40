@@ -1,0 +1,29 @@
+<!--header-->
+<%= javascript_include_tag "SmoothScroll.min.js", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "demo.js", "data-turbolinks-track" => true %>
+<div class="header">
+  <div class="logo">
+    <h1><a href="index.html">Food and Drink </a></h1>
+  </div>
+  <div class="top-nav">
+    <span class="menu"><%= image_tag("menu") %></span>
+    <ul>
+      <li><a class="active" href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="codes.html">Codes</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <!-- script-for-menu -->
+    <script>
+      $("span.menu").click(function(){
+        $(".top-nav ul").slideToggle("slow" , function(){
+        });
+      });
+    </script>
+    <!-- script-for-menu -->
+  </div>
+    <div class="clearfix"> </div>
+</div>
+<!--//header-->
