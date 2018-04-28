@@ -11,9 +11,12 @@
 // about supported directives.
 //
 //= require rails-ujs
+<<<<<<< 531b425120c4dceee5e1c47b2033457adc15bfd1
 //= require turbolinks
 //= require bootstrap.bundle.min
 //= require jquery.min
+=======
+>>>>>>> Init Static Pages
 //= require jquery
 //= require i18n
 //= require i18n.js
