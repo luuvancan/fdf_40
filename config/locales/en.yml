@@ -1,4 +1,41 @@
 en:
+  layouts:
+    public:
+      application:
+        title: "Food and Drink"
+        lorem: "Lorem ipsum dolor sit amet"
+        fusce: "Fusce egestas purus in nulla"
+        duis: "Duis faucibus dolor risus"
+      static_pages:
+        home:
+          title: "Home"
+      _header:
+        food: "Food and Drink"
+        menu: "Home"
+        categories: "Categories"
+        menu: "Menu"
+        code: "Codes"
+        blog: "Blog"
+        cart: "Cart"
+      _our_services:
+        our: "Our Services"
+        pell: "Pellentesque ultrices tincidunt risus in pellentesque. Morbi facilisis consectetur nunc in luctus."
+      _footer:
+        footer: "© 2016 Food Corner. All rights reserved | Design by Luu Van Can & Tran Thi Mai Hoa"
+        w3: "W3schools.com"
+    admin:
+      footer_admin:
+        text_copyright: "Copyright © 2018 Luu Van Can & Tran Thi Mai Hoa"
+      left_bar_admin:
+        profile: "Profile"
+        users: "Users"
+        view: "View"
+        add: "Add"
+        categories: "Categories"
+        products: "Products"
+        orders: "Orders"
+        logout: "Logout"
+        admin_page_link: "Admin Page"
   admin:
     footer_admin:
       text_copyright: "Copyright © 2018 Luu Van Can & Tran Thi Mai Hoa"
