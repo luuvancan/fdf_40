@@ -7,10 +7,26 @@ end
 
 gem "rails", "~> 5.1.6"
 gem "mysql2", ">= 0.3.18", "< 0.6.0"
+gem "i18n-js"
+gem "bcrypt", "3.1.11"
+gem "faker"
+gem "will_paginate"
+gem "bootstrap-will_paginate"
+gem "carrierwave", "1.2.2"
+gem "mini_magick", "4.7.0"
+gem "jquery-rails"
+gem "jquery-easing-rails"
+gem "bootstrap-sass", "3.3.7"
+gem "config"
+gem "rails-controller-testing"
+gem "font-awesome-rails"
 gem "puma", "~> 3.7"
 gem "sass-rails", "~> 5.0"
 gem "uglifier", ">= 1.3.0"
-gem "i18n-js"
+gem "coffee-rails", "~> 4.2"
+gem "turbolinks", "~> 5"
+gem "jbuilder", "~> 2.5"
+gem "rubocop", require: false
 group :development, :test do
   gem "selenium-webdriver"
 end

@@ -1,0 +1,8 @@
+<%= render "shared/error_messages", object: f.object %>
+<%= f.label t ".name" %>
+<%= f.text_field :name %>
+
+<%= f.label t ".parent" %>
+<%= f.select :parent, options_for_select(display_categories_parent_form, selected: @category.parent) %>
+
+<%= f.submit t(".submit"), class: "btn btn-primary" %>
