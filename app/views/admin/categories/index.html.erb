@@ -1,0 +1,32 @@
+<%= provide :title, "" %>
+<ol class="breadcrumb">
+  <li class="breadcrumb-item active"><%= t "title" %></li>
+  <li class="breadcrumb-item">
+    <%= link_to t(".add"), new_admin_category_path %>
+  </li>
+</ol>
+<div class="card mb-3">
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th><%= t ".id" %></th>
+            <th><%= t ".name" %></th>
+            <th><%= t ".function" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Food</td>
+            <td>
+              <%= link_to t(".edit"), "" %> |
+              <%= link_to t(".delete"), "", method: :delete, data: {confirm: t(".confirm_delete")} %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
