@@ -12,23 +12,23 @@ en:
     500:
       title: "We're sorry, but something went wrong (500)"
       we: "We're sorry, but something went wrong."
-  layouts:
-    admin:
-      footer_admin:
-        text_copyright: "Copyright © 2018 Luu Van Can & Tran Thi Mai Hoa"
-      left_bar_admin:
-        profile: "Profile"
-        users: "Users"
-        view: "View"
-        add: "Add"
-        categories: "Categories"
-        products: "Products"
-        orders: "Orders"
-        logout: "Logout"
-        admin_page_link: "Admin Page"
   admin:
+    footer_admin:
+      text_copyright: "Copyright © 2018 Luu Van Can & Tran Thi Mai Hoa"
+    left_bar_admin:
+      profile: "Profile"
+      users: "Users"
+      view: "View"
+      add: "Add"
+      categories: "Categories"
+      products: "Products"
+      orders: "Orders"
+      logout: "Logout"
+      admin_page_link: "Admin Page"
     categories:
+      no_parent: "No parent"
       index:
+        title: "Categories"
         add: "Add"
         edit: "Edit"
         delete: "Delete"
@@ -36,9 +36,24 @@ en:
         id: "ID"
         name: "Name"
         function: "Function"
-        title: "Categories"
+        not_find_cat: "Not find the category"
+        parent_id: "Id parent"
       new:
         title: "Add product"
+        success_add_msg: "Add categories success"
+        danger_add_msg: "Add categories fail"
+        success_delete_msg: "Delete categories success"
+        danger_delete_msg: "Delete categories fail"
+        exist_error: "Cat's name existed"
+      edit:
+        title: "Edit product"
+        success_edit_msg: "Edit categories success"
+      form:
         name: "Name"
-        parent: "ID parent"
-        submit: "Button"
+        parent: "Parent"
+        submit: "Submit"
+  shared:
+    error_messages:
+      text_div_1: "The form contains"
+      one: "%{count} error"
+      other: "%{count} errors"

@@ -1,3 +1,7 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'color';
+
 html {
   position: relative;
   min-height: 100%;
@@ -491,4 +495,16 @@ input, select {
 
 .btn-primary {
   margin-top: 20px;
+}
+
+select {
+  padding-top: 5px;
+}
+
+.function {
+  width: 10%
+}
+
+.function img {
+  width: 40%;
 }

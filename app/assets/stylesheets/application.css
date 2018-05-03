@@ -13,6 +13,6 @@
  *= require_self
  *= require font-awesome
  */
- @import 'bootstrap';
- @import 'public';
- @import 'sb-admin';
+ @import 'boostrap.css';
+ @import 'public.css';
+ @import 'sb-admin.css';

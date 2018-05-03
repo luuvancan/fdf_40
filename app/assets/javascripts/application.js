@@ -14,9 +14,5 @@
 //= require bootstrap-sprockets
 //= require rails-ujs
 //= require turbolinks
-//= require i18n
-//= require i18n.js
-//= require i18n/translations
-@import 'boostrap.bunble.min';
-@import 'cable';
-@import 'jquery.min';
+//= require bootstrap.bundle.min
+//= require jquery.min

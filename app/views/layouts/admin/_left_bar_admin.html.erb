@@ -8,38 +8,14 @@
       <li class="nav-item" data-toggle="tooltip" data-placement="right">
         <%= link_to sanitize("<i class='fa fa-user-circle'></i> " + content_tag(:span, t(".profile"), class: "nav-link-text")), "#", class: "nav-link" %>
       </li>
-      <li class="nav-item" data-toggle="tooltip" data-placement="right">
-        <%= link_to sanitize("<i class='fa fa-users'></i> " + content_tag(:span, t(".users"), class: "nav-link-text")), "#collapseComponents", class: "nav-link nav-link-collapse collapsed", "data-toggle": "collapse" %>
-        <ul class="sidenav-second-level collapse" id="collapseComponents">
-          <li>
-            <%= link_to t(".view"), "" %>
-          </li>
-          <li>
-            <%= link_to t(".add"), "" %>
-          </li>
-        </ul>
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+        <%= link_to sanitize("<i class='fa fa-users'></i> " + content_tag(:span, t(".users"), class: "nav-link-text")), "#", class: "nav-link" %>
       </li>
-      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Manager Category">
-        <%= link_to sanitize("<i class='fa fa-tasks'></i> " + content_tag(:span, t(".categories"), class: "nav-link-text")), "#collapseCategory", class: "nav-link nav-link-collapse collapsed", "data-toggle": "collapse" %>
-        <ul class="sidenav-second-level collapse" id="collapseCategory">
-          <li>
-            <%= link_to t(".view"), "" %>
-          </li>
-          <li>
-            <%= link_to t(".add"), "" %>
-          </li>
-        </ul>
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+        <%= link_to sanitize("<i class='fa fa-tasks'></i> " + content_tag(:span, t(".categories"), class: "nav-link-text")), admin_categories_path, class: "nav-link" %>
       </li>
-      <li class="nav-item" data-toggle="tooltip" data-placement="right">
-        <%= link_to sanitize("<i class='fa fa-archive'></i> " + content_tag(:span, t(".products"), class: "nav-link-text")), "#collapseProduct", class: "nav-link nav-link-collapse collapsed", "data-toggle": "collapse" %>
-        <ul class="sidenav-second-level collapse" id="collapseProduct">
-          <li>
-            <%= link_to t(".view"), "" %>
-          </li>
-          <li>
-            <%= link_to t(".add"), "" %>
-          </li>
-        </ul>
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+        <%= link_to sanitize("<i class='fa fa-archive'></i> " + content_tag(:span, t(".products"), class: "nav-link-text")), "#", class: "nav-link" %>
       </li>
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
         <%= link_to sanitize("<i class='fa fa-reorder'></i> " + content_tag(:span, t(".orders"), class: "nav-link-text")), "#", class: "nav-link" %>

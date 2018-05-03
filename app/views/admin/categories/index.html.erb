@@ -1,6 +1,6 @@
-<%= provide :title, "" %>
+<%= provide :title, t(".title") %>
 <ol class="breadcrumb">
-  <li class="breadcrumb-item active"><%= t "title" %></li>
+  <li class="breadcrumb-item active"><%= link_to t(".title"), admin_categories_path %></li>
   <li class="breadcrumb-item">
     <%= link_to t(".add"), new_admin_category_path %>
   </li>
@@ -13,18 +13,29 @@
           <tr>
             <th><%= t ".id" %></th>
             <th><%= t ".name" %></th>
-            <th><%= t ".function" %></th>
+            <th><%= t ".parent_id" %></th>
+            <th class="function"><%= t ".function" %></th>
           </tr>
         </thead>
         <tbody>
+          <%
+            @categories.each do |category|
+              if category.parent.blank?
+          %>
           <tr>
-            <td>1</td>
-            <td>Food</td>
-            <td>
-              <%= link_to t(".edit"), "" %> |
-              <%= link_to t(".delete"), "", method: :delete, data: {confirm: t(".confirm_delete")} %>
+            <td><%= category.id %></td>
+            <td><%= link_to category.name, edit_admin_category_path(category) %></td>
+            <td><%= category.parent %></td>
+            <td class="function">
+              <%= link_to image_tag("edit.jpg", alt: t(".edit")), edit_admin_category_path(category) %> |
+              <%= link_to image_tag("delete.jpg", alt: t(".delete")), admin_category_path(category), method: :delete, data: {confirm: t(".confirm_delete")} %>
             </td>
+            <%= render partial: "subcategory", locals: {subcategories: category.subcategories} if category.subcategories.present? %>
           </tr>
+          <%
+              end
+            end
+          %>
         </tbody>
       </table>
     </div>
