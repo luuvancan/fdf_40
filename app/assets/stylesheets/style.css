@@ -399,6 +399,8 @@ i.fa.fa-cutlery {
 }
 .special-grids {
     margin: 4em 0 0 0;
+    max-height: 1120px;
+    overflow: hidden;
 }
 .w3l-special-grid {
     padding: 0;
@@ -443,15 +445,15 @@ i.fa.fa-cutlery {
     font-size: .9em;
 }
 .wthree-img{
-    background: url(../images/sp2.jpg) no-repeat 0px 0px !important;
+    background: url(sp2.jpg) no-repeat 0px 0px !important;
     background-size: cover !important;
 }
 .wthree-img2{
-    background: url(../images/sp3.jpg) no-repeat 0px 0px !important;
+    background: url(sp3.jpg) no-repeat 0px 0px !important;
     background-size: cover !important;
 }
 .wthree-img3{
-    background: url(../images/sp4.jpg) no-repeat 0px 0px !important;
+    background: url(sp4.jpg) no-repeat 0px 0px !important;
     background-size: cover !important;
 }
 .w3ls-special-text p{
