@@ -1,0 +1,33 @@
+<div class="special">
+  <div class="container">
+    <div class="services-info">
+      <h3>Today Specials</h3>
+      <p>Pellentesque ultrices tincidunt risus in pellentesque. Morbi facilisis consectetur nunc in luctus.</p>
+    </div>
+    <div class="special-grids">
+      <% @products.each do |p| %>
+        <div class="col-md-6 w3l-special-grid">
+          <div class="col-md-6 w3ls-special-img wthree-img" style="background-image: url(1.jpg);">
+            <div class="wpf-demo-6">
+              <div class="w3ls-special-text">
+                <p><sub>$</sub><%= p.price %></p>
+              </div>
+              <figcaption class="view-caption">
+                <h4>View detail product</h4>
+                <a href="menu.html">View</a>
+              </figcaption>
+            </div>
+          </div>
+          <div class="col-md-6 agileits-special-info">
+            <h4><%= p.name %></h4>
+            <p>Maecenas ac hendrerit purus. Lorem ipsum dolor sit amet</p>
+          </div>
+          <div class="clearfix"> </div>
+        </div>
+      <% end %>
+      <div class="clearfix"> </div>
+    </div>
+    <div class="clearfix"> </div>
+  </div>
+</div>
+

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :orders
     resources :order_details, only: :show
   end
+
   namespace :public do
     root "static_pages#home"
     get "/home", to: "static_pages#home"
