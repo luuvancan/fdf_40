@@ -1,17 +1,4 @@
 en:
-  public:
-    404:
-      title: "The page you were looking for doesn't exist (404)"
-      page: "The page you were looking for doesn't exist."
-      you: "You may have mistyped the address or the page may have moved."
-      if: "If you are the application owner check the logs for more information."
-    422:
-      title: "The change you wanted was rejected (422)"
-      the: "The change you wanted was rejected."
-      may: "Maybe you tried to change something you didn't have access to."
-    500:
-      title: "We're sorry, but something went wrong (500)"
-      we: "We're sorry, but something went wrong."
   admin:
     footer_admin:
       text_copyright: "Copyright © 2018 Luu Van Can & Tran Thi Mai Hoa"
@@ -39,19 +26,52 @@ en:
         not_find_cat: "Not find the category"
         parent_id: "Id parent"
       new:
-        title: "Add product"
+        title: "Add category"
         success_add_msg: "Add categories success"
         danger_add_msg: "Add categories fail"
         success_delete_msg: "Delete categories success"
         danger_delete_msg: "Delete categories fail"
         exist_error: "Cat's name existed"
       edit:
-        title: "Edit product"
+        title: "Edit category"
         success_edit_msg: "Edit categories success"
       form:
         name: "Name"
         parent: "Parent"
         submit: "Submit"
+    products:
+      alert_image_size: "File should be less or equals 5 MB"
+      new:
+        title: "Add product"
+        success_add_msg: "Add products success"
+        danger_add_msg: "Add products fail"
+        success_delete_msg: "Delete products success"
+        danger_delete_msg: "Delete products fail"
+        exist_error: "Product's name existed"
+      form:
+        name: "Name"
+        category: "Category"
+        image: "Image"
+        description: "Description"
+        price: "Price"
+        submit: "Submit"
+      edit:
+        title: "Edit product"
+        success_edit_msg: "Edit product success"
+      index:
+        title: "Products"
+        add: "Add"
+        edit: "Edit"
+        delete: "Delete"
+        confirm_delete: "Do you want to delete it?"
+        id: "ID"
+        name: "Name"
+        cat_name: "Cat name"
+        image: "Image"
+        function: "Function"
+        not_find_cat: "Not find the category"
+        parent_id: "Id parent"
+        price: "Price ($)"
   shared:
     error_messages:
       text_div_1: "The form contains"

@@ -16,3 +16,6 @@
 //= require turbolinks
 //= require bootstrap.bundle.min
 //= require jquery.min
+//= require i18n
+//= require i18n.js
+//= require i18n/translations

@@ -1,0 +1,25 @@
+<%= render "shared/error_messages", object: f.object %>
+<%= f.label t ".name" %>
+<%= f.text_field :name %>
+
+<%= f.label t ".category" %>
+<%= f.select :category_id, options_for_select(@categories.collect{ |u| [u.name, u.id]}, selected: @product.category_id) %>
+
+<%= f.label t ".price" %>
+<%= f.text_field :price %>
+
+<%= f.label t(".image") %>
+<%= f.file_field :image, accept: "image/jpeg,image/gif,image/png, image/jpg", id: "image_change" %>
+<% if @product.image? %>
+  <%= image_tag @product.image.url, id: "img", class: "display_edit_image" %>
+<% else %>
+  <%= image_tag "", id: "img", class: "display_edit_image" %>
+<% end %>
+
+<%= f.label t ".description" %>
+<%= f.text_area :description %>
+
+<%= f.submit t(".submit"), class: "btn btn-primary" %>
+
+<%= javascript_include_tag "customer.js", "data-turbolinks-track": true %>
+<%= javascript_include_tag "validate_img", "data-turbolinks-track": true %>
