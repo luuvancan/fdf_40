@@ -1,0 +1,7 @@
+admin:
+  products:
+    index:
+      image_size: 200
+    size_image_upload: 5
+    picture_error: "should be less than 5MB"
+  number_items_per_page: 10

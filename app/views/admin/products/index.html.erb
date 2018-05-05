@@ -1,0 +1,48 @@
+<%= provide :title, t(".title") %>
+<ol class="breadcrumb">
+  <li class="breadcrumb-item active"><%= link_to t(".title"), admin_products_path %></li>
+  <li class="breadcrumb-item">
+    <%= link_to t(".add"), new_admin_product_path %>
+  </li>
+</ol>
+<div class="card mb-3">
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="table_product" width="100%" cellspacing="0">
+        <tr>
+          <th><%= t ".id" %></th>
+          <th><%= t ".name" %></th>
+          <th><%= t ".cat_name" %></th>
+          <th><%= t ".price" %></th>
+          <th class="image"><%= t ".image" %></th>
+          <th class="function"><%= t ".function" %></th>
+        </tr>
+        <%
+          @products.each do |product|
+        %>
+        <tr>
+          <td><%= product.id %></td>
+          <td><%= link_to product.name, admin_product_path(product) %></td>
+          <td><%= product.category.name %></td>
+          <td><%= product.price %></td>
+          <td class="image">
+            <% if product.image? %>
+              <%= image_tag product.image.url %>
+            <% else %>
+              <%= image_tag "no-image.png" %>
+            <% end %>
+          </td>
+          <td class="function">
+            <%= link_to image_tag("edit.jpg", alt: t(".edit")), edit_admin_product_path(product) %> |
+            <%= link_to image_tag("delete.jpg", alt: t(".delete")), admin_product_path(product), method: :delete, data: {confirm: t(".confirm_delete")} %>
+          </td>
+        </tr>
+        <%
+          end
+        %>
+      </table>
+      <%= will_paginate %>
+    </div>
+  </div>
+</div>
+
