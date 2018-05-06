@@ -14,14 +14,25 @@
               </div>
               <figcaption class="view-caption">
                 <h4>View detail product</h4>
-                <%= link_to "View", product_path(p.id)%>
+                <%= link_to "View", product_path(p.id) %>
               </figcaption>
             </div>
           </div>
           <div class="col-md-6 agileits-special-info">
-            <h4><%= p.name %></h4>
-            <p>Maecenas ac hendrerit purus. Lorem ipsum dolor sit amet</p>
+            <h4 class="h4_name"><%= p.name %></h4>
+                <div class="col-md-12">
+                <%= form_for @order_item, remote: true do |f| %>
+                  <div class="input-group ">
+                    <%= f.number_field :quantity, value: 1, class: "form-control ", min: 1 %> <br>
+                    <div class="input-group-btn">
+                      <%= f.hidden_field :product_id, value: p.id %>
+                      <%= f.submit "Add to Cart", class: "btn btn-danger" %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
           </div>
+
           <div class="clearfix"> </div>
         </div>
       <% end %>

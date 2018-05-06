@@ -1,9 +1,10 @@
 class CreateOrders < ActiveRecord::Migration[5.1]
   def change
     create_table :orders do |t|
-      t.datetime :date_order
-      t.integer :status
-      t.float :total_price
+      t.float :subtotal
+      t.float :tax
+      t.float :total
+      t.integer :order_status
 
       t.timestamps
     end

@@ -1,0 +1,39 @@
+<% if !@order_item.nil? && @order_item.errors.any? %>
+  <div class="alert alert-danger">
+    <ul>
+    <% @order_item.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<% if @order_items.size == 0 %>
+  <p class="text-center">
+    There are no items in your shopping cart.  Please <%= link_to "go back", root_path %> and add some items to your cart.
+  </p>
+<% else %>
+  <div class="cart-items">
+    <div class="container">
+         <h1>MY SHOPPING (<%= @order_items.size %>) </h1>
+         <div class="strip-line"></div>
+      <div class="cart-gd">
+          <script>$(document).ready(function(c) {
+            $('.close3').on('click', function(c){
+                $('.cart-header3').fadeOut('slow', function(c){
+              $('.cart-header3').remove();
+            });
+            });
+            });
+         </script>
+        <% @order_items.each do |order_item| %>
+          <%= render 'carts/cart_row', product: order_item.product, order_item: order_item, show_total: true %>
+        <% end %>
+        <div>
+        <h2 style="float: right;"><strong>Total order: </strong> $<%= @order.subtotal %></h2>
+        </div>
+      <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+<% end %>
+

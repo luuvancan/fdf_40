@@ -419,17 +419,17 @@ i.fa.fa-cutlery {
 }
 .agileits-special-info{
     text-align: center;
-    padding: 5.66em 2em;
+    height: 280px;
     background: #FFFFFF;
     border: solid 1px #eaeaea;
 }
 .agileits-special-info h4{
     color: #000;
     font-size: 1.5em;
-    margin: .3em 0 0 0;
+    margin: 2em 0 6em 0;
     position: relative;
 }
-.agileits-special-info h4:after{
+/*.agileits-special-info h4:after{
 	content: '';
     background: #f35041;
     width: 23%;
@@ -437,10 +437,10 @@ i.fa.fa-cutlery {
     position: absolute;
     top: 36px;
     left: 82px;
-}
+} */
 .agileits-special-info p{
     line-height: 1.5em;
-    margin: 1.5em 0 0 0;
+    margin: 1.5em 0 10em 0;
     color: #999999;
     font-size: .9em;
 }
@@ -2417,4 +2417,23 @@ a.simpleCart_empty {
   opacity: 0;
   -moz-opacity: 0;
   filter: alpha(opacity=0);
+}
+
+.input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group{
+  margin-right: 65px;
+}
+
+.form-control{
+  width: 20%;
+  margin-left: 0px;
+  margin-top: 10px;
+}
+.update_bt{
+  margin-top: 0px;
+  width: 15%;
+  margin-right: 70%;
+}
+.delivery{
+  margin-top: 0px;
+
 }
