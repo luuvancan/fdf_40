@@ -1,7 +1,20 @@
 admin:
-  products:
+  product:
     index:
       image_size: 200
     size_image_upload: 5
+    price_min: 0
+    price_max: 1000000
     picture_error: "should be less than 5MB"
+  user:
+    phone_min_length: 10
+    phone_max_length: 15
+    max_length_email: 255
+    min_length_password: 6
+  order:
+    paid: "paid"
+    unpaid: "unpaid"
   number_items_per_page: 10
+authentication:
+  session:
+    remember: "1"

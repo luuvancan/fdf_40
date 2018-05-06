@@ -1,0 +1,26 @@
+<%= provide :title, t(".title") %>
+<div class="card-header"><%= t ".title" %></div>
+<div class="card-body">
+  <%= form_for(:session, url: authentication_login_path) do |f| %>
+    <div class="form-group">
+      <%= f.label :email %>
+      <%= f.email_field :email, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :password %>
+      <%= f.password_field :password, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <div class="form-check form-check-inline">
+        <%= f.check_box :remember_me %><span><%= t ".remember" %></span>
+      </div>
+    </div>
+
+    <%= f.submit t(".title"), class: "btn btn-primary btn-block" %>
+  <% end %>
+  <div class="text-center">
+    <%= link_to t(".register"), authentication_signup_path, class: "d-block small mt-3" %>
+    <%= link_to t(".forgot_password"), "", class: "d-block small" %>
+  </div>
+</div>

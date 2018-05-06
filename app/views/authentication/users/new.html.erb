@@ -1,0 +1,46 @@
+<%= provide :title, t(".title") %>
+<div class="card-header"><%= t ".title" %></div>
+<div class="card-body">
+  <%= form_for(@user, url: authentication_signup_path) do |f| %>
+    <%= render "shared/error_messages", object: f.object %>
+    <div class="form-group">
+      <%= f.label t "admin.users.index.full_name" %>
+      <%= f.text_field :full_name, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label t "admin.users.index.email" %>
+      <%= f.email_field :email, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label t "admin.users.index.address" %>
+      <%= f.text_field :address, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label t "admin.users.index.phone" %>
+      <%= f.text_field :phone, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <div class="form-check form-check-inline">
+        <%= f.radio_button :sex, true, checked: true %><%= t ".male" %>
+      </div>
+      <div class="form-check form-check-inline">
+        <%= f.radio_button :sex, false %><%= t ".female" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="form-row">
+        <div class="col-md-6">
+          <%= f.label t "admin.users.form.password" %>
+          <%= f.password_field :password, class: "form-control" %>
+        </div>
+        <div class="col-md-6">
+          <%= f.label t "admin.users.form.password_confirmation" %>
+          <%= f.password_field :password_confirmation, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+    <%= f.submit t(".title"), class: "btn btn-primary btn-block" %>
+  <% end %>
+</div>

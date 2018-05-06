@@ -1,12 +1,13 @@
 class Product < ApplicationRecord
   belongs_to :category
-  has_many :oder_details, dependent: :destroy
+  has_many :oder_detail, dependent: :destroy
 
   mount_uploader :image, ImageUploader
   validates :name, presence: true
   validates :description, presence: true
   validates :price, presence: true,
-    numericality: {greater_than_or_equal_to: 0, less_than: 1_000_000}
+    numericality: {less_than: Settings.admin.product.price_max,
+                   greater_than_or_equal_to: Settings.admin.product.price_min}
 
   scope :by_name, ->(name){where name: name}
   scope :by_id_not_match, ->(id){where.not id: id}

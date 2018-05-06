@@ -502,7 +502,17 @@ select {
 }
 
 .function {
-  width: 10%
+  width: 10%;
+  text-align: center
+}
+
+.function1 {
+  width: 12%;
+  text-align: center
+}
+
+.function1 img, .function img {
+  width: 20%;
 }
 
 .function img {
@@ -622,4 +632,8 @@ textarea {
 .display_edit_image {
   width: 250px;
   display: block;
+}
+
+#comback {
+  background: #333333;
 }
