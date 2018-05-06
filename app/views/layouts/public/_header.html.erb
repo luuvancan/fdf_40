@@ -1,0 +1,19 @@
+
+<div class="header">
+  <div class="logo">
+    <h1><a href="index.html"> <%= t("layouts.public._header.food") %> </a></h1>
+  </div>
+  <div class="top-nav">
+    <span class="menu"><%= image_tag("menu") %></span>
+    <ul>
+      <li> <%= link_to t("layouts.public._header.home"), "menu.html", class: "active" %> </li>
+      <li> <%= link_to t("layouts.public._header.categories"), "menu.html" %> </li>
+      <li> <%= link_to t("layouts.public._header.menu"), "menu.html" %> </li>
+      <li> <%= link_to t("layouts.public._header.code"), "menu.html" %> </li>
+      <li> <%= link_to t("layouts.public._header.blog"), "menu.html" %> </li>
+      <li> <%= link_to t("layouts.public._header.cart"), "menu.html" %> <i class="fa fa-shopping-cart" aria-hidden="true"></i></li>
+    </ul>
+  </div>
+    <div class="clearfix"> </div>
+</div>
+<!--//header-->

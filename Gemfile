@@ -16,6 +16,7 @@ gem "carrierwave", "1.2.2"
 gem "mini_magick", "4.7.0"
 gem "jquery-rails"
 gem "jquery-easing-rails"
+gem "bootstrap", "~> 4.0.0"
 gem "bootstrap-sass", "3.3.7"
 gem "config"
 gem "rails-controller-testing"
@@ -27,6 +28,8 @@ gem "coffee-rails", "~> 4.2"
 gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
 gem "rubocop", require: false
+gem "i18n-js"
+# gem 'font-awesome-sass', '~> 5.0.9'
 group :development, :test do
   gem "selenium-webdriver"
 end
