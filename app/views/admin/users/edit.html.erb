@@ -1,6 +1,6 @@
 <%= provide :title, t(".title") %>
-<h3><%= t ".title" %></h3>
+<h3><%= t ".text_heading" %></h3>
 
-<%= form_for @product, url: admin_product_path do |f| %>
+<%= form_for @user, url: admin_user_path do |f| %>
   <%= render partial: "form", locals: {f: f} %>
 <% end %>

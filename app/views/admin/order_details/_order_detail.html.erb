@@ -1,0 +1,7 @@
+<tr>
+  <td><%= order_detail.id %></td>
+  <td><%= link_to order_detail.product.name, admin_product_path(order_detail.product) %></td>
+  <td><%= order_detail.quantity %></td>
+  <td><%= order_detail.price %></td>
+  <td class="function"><%= order_detail.price*order_detail.quantity %></td>
+</tr>

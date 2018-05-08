@@ -1,0 +1,27 @@
+
+<%= provide :title, t(".title") %>
+<ol class="breadcrumb">
+  <li class="breadcrumb-item active"><%= link_to t(".title"), admin_orders_path %></li>
+</ol>
+<div class="card mb-3">
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th><%= t ".id" %></th>
+            <th><%= t ".date_order" %></th>
+            <th><%= t ".status" %></th>
+            <th><%= t ".user" %></th>
+            <th><%= t ".total_price" %></th>
+            <th class="function1"><%= t "admin.categories.index.function" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @orders %>
+        </tbody>
+      </table>
+      <%= will_paginate %>
+    </div>
+  </div>
+</div>

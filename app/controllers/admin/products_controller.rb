@@ -2,8 +2,10 @@ module Admin
   class ProductsController < ApplicationController
     layout "admin/application"
 
+    before_action :logged_in_user
     before_action :load_product, except: %i(index new create)
     before_action :load_categories, except: :index
+    before_action :admin_user, only: %i(edit update destroy)
 
     def index
       @products = Product.all.paginate page: params[:page], per_page: Settings.admin.number_items_per_page

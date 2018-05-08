@@ -1,0 +1,54 @@
+<%= render "shared/error_messages", object: f.object %>
+
+<div class="form-group">
+  <%= f.label t "admin.users.index.email" %>
+  <%= f.text_field :email %>
+</div>
+
+<div class="form-group">
+  <%= f.label t "admin.users.index.full_name" %>
+  <%= f.text_field :full_name %>
+</div>
+
+<div class="form-group">
+  <%= f.label t "admin.users.index.phone" %>
+  <%= f.text_field :phone %>
+</div>
+
+<div class="form-group">
+  <%= f.label t "admin.users.index.address" %>
+  <%= f.text_field :address %>
+</div>
+
+<div class="form-group">
+  <div class="form-check form-check-inline">
+    <%= f.radio_button :sex, "male", checked: true %><%= t ".male" %>
+  </div>
+  <div class="form-check form-check-inline">
+    <%= f.radio_button :sex, "female" %><%= t ".female" %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label t "admin.users.index.role" %>
+  <%= f.select :role, options_for_select(load_role_form, selected: @user.role) %>
+</div>
+
+<div class="form-group">
+  <%= f.label t(".password") %>
+  <%= f.password_field :password %>
+</div>
+
+<div class="form-group">
+  <%= f.label t(".password_confirmation") %>
+  <%= f.password_field :password_confirmation %>
+</div>
+
+<div class="btn-toolbar">
+  <div class="btn-group mr-2">
+    <%= link_to t(".comeback"), admin_users_path, class: "btn btn-primary", id: "comback" %>
+  </div>
+  <div class="btn-group">
+    <%= f.submit t(".submit"), class: "btn btn-primary" %>
+  </div>
+</div>

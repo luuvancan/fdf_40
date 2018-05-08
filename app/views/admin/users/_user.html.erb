@@ -1,0 +1,12 @@
+<tr>
+  <td><%= user.id %></td>
+  <td><%= user.email %></td>
+  <td><%= user.full_name %></td>
+  <td><%= user.sex %></td>
+  <td><%= user.phone %></td>
+  <td><%= user.role %></td>
+  <td class="function">
+    <%= link_to image_tag("edit.jpg", alt: t(".edit")), edit_admin_user_path(user) %> |
+    <%= link_to image_tag("delete.jpg", alt: t(".delete")), admin_user_path(user), method: :delete, data: {confirm: t(".confirm_delete")} %>
+  </td>
+</tr>

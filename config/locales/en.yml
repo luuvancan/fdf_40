@@ -106,9 +106,80 @@ en:
         cat_name: "Cat name"
         image: "Image"
         function: "Function"
-        not_find_cat: "Not find the category"
+        not_find_product: "Not find the product"
         parent_id: "Id parent"
         price: "Price ($)"
+    users:
+      index:
+        title: "Users"
+        full_name: "Fullname"
+        email: "Email"
+        address: "Address"
+        phone: "Phone"
+        sex: "Sex"
+        not_find_user: "Not find the user"
+        confirm_delete: "Do you want to delete the user?"
+        id: "ID"
+        role: "Role"
+        admin: "Admin"
+        user: "User"
+        not_admin: "You don't have role"
+      new:
+        title: "Add user"
+        success_add_msg: "Add user success"
+        danger_add_msg: "Add user fail"
+        success_delete_msg: "Delete user success"
+        danger_delete_msg: "Delete user fail"
+      form:
+        submit: "Submit"
+        male: "Male"
+        female: "Female"
+        comeback: "Return Users"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+      edit:
+       title: "Edit user"
+       text_heading: "User information"
+       success_edit_msg: "Edit the user success"
+    orders:
+      index:
+        title: "Orders"
+        id: "ID"
+        date_order: "Date order"
+        total_price: "Total price ($)"
+        full_name: "User"
+        paid: "Paid"
+        unpaid: "Unpaid"
+        view: "View"
+        user: "Customer"
+        status: "Status"
+        edit: "edit"
+        delete: "delete"
+        confirm_delete: "Do you want to delete the order?"
+        success_delete_msg: "Delete the order success"
+        danger_delete_msg: "Delete the order fail"
+      edit:
+        title: "Information order detail"
+        comback: "Return to orders"
+        submit: "Change status"
+        success_edit_msg: "Update status of the order success"
+  authentication:
+    sessions:
+      new:
+        email: "Email address"
+        password: "Password"
+        remember: "Remember_me"
+        title: "Login"
+        register: "Register an Account"
+        forgot_password: "Forgot Password?"
+        error_messages: "Invalid email/password combination"
+      message_not_login: "You should be login"
+      logout:
+        confirm: "Do you want to logout?"
+    users:
+      new:
+        title: "Register an Account"
+        error_messages: "Can't not signup. You can try again"
   shared:
     error_messages:
       text_div_1: "The form contains"

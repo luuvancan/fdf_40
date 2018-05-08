@@ -1,0 +1,12 @@
+<tr>
+  <td><%= order.id %></td>
+  <td><%= order.date_order %></td>
+  <td><%= order.status %></td>
+  <td><%= order.user.full_name %></td>
+  <td><%= order.total_price %></td>
+  <td class="function1">
+    <%= link_to image_tag("view.png", alt: t(".view")), admin_order_path(order) %>
+    <%= link_to image_tag("edit.jpg", alt: t(".edit")), edit_admin_order_path(order) %> |
+    <%= link_to image_tag("delete.jpg", alt: t(".delete")), admin_order_path(order), method: :delete, data: {confirm: t(".confirm_delete")} %>
+  </td>
+</tr>

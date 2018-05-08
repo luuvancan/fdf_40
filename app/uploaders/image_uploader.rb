@@ -1,6 +1,6 @@
 class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
-  process resize_to_limit: [Settings.admin.products.index.image_size, Settings.admin.products.index.image_size]
+  process resize_to_limit: [Settings.admin.product.index.image_size, Settings.admin.product.index.image_size]
 
   if Rails.env.production?
     storage :fog
