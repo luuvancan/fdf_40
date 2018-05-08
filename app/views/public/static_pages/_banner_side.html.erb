@@ -1,0 +1,25 @@
+  <div class="banner">
+    <%= image_tag("1.jpg", class: "img_banner") %>
+    <%= render "layouts/public/header" %>
+    <div class="banner-slider">
+      <div class="container">
+        <div class="slider">
+          <div class="callbacks_container">
+            <ul class="rslides" id="slider4">
+              <% @categories.each do |cat| %>
+                <li>
+                  <div class="banner-info">
+                    <h3> <%= cat.name %> </h3>
+                    <%= link_to t("layouts.public._header.menu"), public_products_path(cat) %>
+                  </div>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //banner -->
+<%= javascript_include_tag "responsiveslides.min", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "slide_image_banner", "data-turbolinks-track" => true %>

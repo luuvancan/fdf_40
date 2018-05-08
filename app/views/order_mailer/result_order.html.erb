@@ -1,0 +1,30 @@
+<h1><%= t "layouts.public.application.title" %></h1>
+<p><%= t "layouts.public.application.hi" %> <%= @user.full_name %>,</p>
+<p><%= t "layouts.public.application.information_order" %></p>
+<div class="card mb-3">
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="table_product" width="100%" cellspacing="0">
+        <tr>
+          <th style="text-align: left;%"><%= t ".product_name" %></th>
+          <th style="width: 5%"><%= t ".quantity" %></th>
+          <th style="width: 5%"><%= t ".price" %></th>
+          <th style="width: 5%"><%= t ".total" %></th>
+        </tr>
+        <% @order_details.each do |order_detail| %>
+          <tr>
+            <td><%= order_detail.product.name %></td>
+            <td><%= order_detail.quantity %></td>
+            <td><%= order_detail.price %></td>
+            <td class="function"><%= order_detail.price*order_detail.quantity %></td>
+          </tr>
+        <% end %>
+        <tr>
+          <td colspan="3">Sum</td>
+          <td class="function"><%= @order.total_price %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+

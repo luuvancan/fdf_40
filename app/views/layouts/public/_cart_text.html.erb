@@ -1,0 +1,1 @@
+<%= link_to sanitize(t("layouts.public._header.cart") + "<i class='fa fa-shopping-cart' aria-hidden='true'></i>( #{number_to_currency session[:total]} )"), public_cart_path, class: "btn btn-link" %>

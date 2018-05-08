@@ -33,6 +33,10 @@ module Admin
       redirect_to admin_orders_url
     end
 
+    def user_order
+      @orders = Order.by_user(current_user.id).paginate page: params[:page], per_page: Settings.admin.number_items_per_page
+    end
+
     private
 
     def order_params

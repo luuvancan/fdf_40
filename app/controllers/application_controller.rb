@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
   include Authentication::SessionsHelper
+  helper_method :load_product
+
+  def load_product product_id
+    Product.find_by id: product_id
+  end
 
   private
 

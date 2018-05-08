@@ -9,8 +9,9 @@ module Authentication
       if user && password_authenticate?(user)
         log_in user
         params[:session][:remember_me] == Settings.authentication.session.remember ? remember(user) : forget(user)
-        redirect_to admin_user_url(user)
+        redirect_to public_root_url
       else
+        @message = t "authentication.sessions.new.error_messages"
         render :new
       end
     end

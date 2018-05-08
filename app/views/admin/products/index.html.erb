@@ -7,6 +7,21 @@
 </ol>
 <div class="card mb-3">
   <div class="card-body">
+    <%= form_for :search, url: admin_products_search_path, method: :post do |f| %>
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col-md-5">
+            <%= f.select :cat_id, options_for_select(display_categories_parent_form) %>
+          </div>
+          <div class="col-md-5">
+            <%= f.text_field :information, placeholder: "Enter name product ... " %>
+          </div>
+          <div class="col-md-2">
+            <%= f.submit "Search" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
     <div class="table-responsive">
       <table class="table table-bordered" id="table_product" width="100%" cellspacing="0">
         <tr>
