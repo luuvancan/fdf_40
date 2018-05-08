@@ -1,4 +1,12 @@
 en:
+  public:
+    static_pages:
+      home:
+        title: "Home"
+      _index:
+        today: "Today Specials"
+        pelle: "Pellentesque ultrices tincidunt risus in pellentesque. Morbi facilisis consectetur nunc in luctus."
+        view: "View detail product"
   layouts:
     public:
       application:
@@ -6,9 +14,6 @@ en:
         lorem: "Lorem ipsum dolor sit amet"
         fusce: "Fusce egestas purus in nulla"
         duis: "Duis faucibus dolor risus"
-      static_pages:
-        home:
-          title: "Home"
       _header:
         food: "Food and Drink"
         menu: "Home"
