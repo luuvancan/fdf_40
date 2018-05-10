@@ -7,7 +7,6 @@ capybara-*.html
 /db/*.sqlite3-journal
 /public/system
 /coverage/
-config/database.yml
 /spec/tmp
 public/uploads/
 public/javascripts/

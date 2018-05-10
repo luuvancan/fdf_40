@@ -1,0 +1,36 @@
+<%= provide :title, t(".title") %>
+<ol class="breadcrumb">
+  <li class="breadcrumb-item active"><%= link_to t(".title"), admin_comments_path %></li>
+</ol>
+<div class="card mb-3">
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="table_product" width="100%" cellspacing="0">
+        <tr>
+          <th><%= t ".id" %></th>
+          <th><%= t ".title" %></th>
+          <th><%= t ".rating" %></th>
+          <th><%= t ".content" %></th>
+          <th class="function"><%= t ".function" %></th>
+        </tr>
+        <%
+          @comments.each do |comment|
+        %>
+        <tr>
+          <td><%= comment.id %></td>
+          <td><%= comment.title %></td>
+          <td><%= comment.rating %></td>
+          <td><%= comment.content %></td>
+          <td class="function">
+            <%= link_to image_tag("delete.jpg", alt: t(".delete")), admin_comment_path(comment), method: :delete, data: {confirm: t(".confirm_delete")} %>
+          </td>
+        </tr>
+        <%
+          end
+        %>
+      </table>
+      <%= will_paginate %>
+    </div>
+  </div>
+</div>
+

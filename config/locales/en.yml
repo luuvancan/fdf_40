@@ -6,6 +6,8 @@ en:
         lorem: "Lorem ipsum dolor sit amet"
         fusce: "Fusce egestas purus in nulla"
         duis: "Duis faucibus dolor risus"
+        hi: "Hi"
+        information_order: "Information order"
       static_pages:
         home:
           title: "Home"
@@ -21,8 +23,16 @@ en:
         our: "Our Services"
         pell: "Pellentesque ultrices tincidunt risus in pellentesque. Morbi facilisis consectetur nunc in luctus."
       _footer:
-        footer: "© 2016 Food Corner. All rights reserved | Design by Luu Van Can & Tran Thi Mai Hoa"
+        footer: "© 2017 Food Corner. All rights reserved | Design by Luu Van Can & Tran Thi Mai Hoa"
         w3: "W3schools.com"
+  public:
+    carts:
+      show:
+        title: "Cart"
+      shopping_cart:
+        no_cart_items: "There are no Details in your shopping cart.</br>  Please %{link} and add some Details to your cart"
+    orders:
+      success: "Add to cart successful"
     admin:
       footer_admin:
         text_copyright: "Copyright © 2018 Luu Van Can & Tran Thi Mai Hoa"
@@ -36,9 +46,18 @@ en:
         orders: "Orders"
         logout: "Logout"
         admin_page_link: "Admin Page"
+    static_pages:
+      home:
+        home: "Home"
+    products:
+      index:
+        add_to_cart: "Add to cart"
   admin:
     footer_admin:
       text_copyright: "Copyright © 2018 Luu Van Can & Tran Thi Mai Hoa"
+    comments:
+      index:
+        title: "Comments"
     left_bar_admin:
       profile: "Profile"
       users: "Users"
@@ -163,6 +182,8 @@ en:
         comback: "Return to orders"
         submit: "Change status"
         success_edit_msg: "Update status of the order success"
+      user_order:
+        title: "Your order"
   authentication:
     sessions:
       new:

@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
   has_many :orders, dependent: :destroy
+  has_many :comments, dependent: :destroy
+
   has_secure_password
   validates :email, presence: true,
     length: {maximum: Settings.admin.user.max_length_email},

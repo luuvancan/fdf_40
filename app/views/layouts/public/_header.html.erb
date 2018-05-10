@@ -1,19 +1,27 @@
-
 <div class="header">
   <div class="logo">
-    <h1><a href="index.html"> <%= t("layouts.public._header.food") %> </a></h1>
+    <h1><%= link_to t("layouts.public._header.food"),"" %></h1>
   </div>
   <div class="top-nav">
     <span class="menu"><%= image_tag("menu") %></span>
     <ul>
-      <li> <%= link_to t("layouts.public._header.home"), "menu.html", class: "active" %> </li>
-      <li> <%= link_to t("layouts.public._header.categories"), "menu.html" %> </li>
-      <li> <%= link_to t("layouts.public._header.menu"), "menu.html" %> </li>
-      <li> <%= link_to t("layouts.public._header.code"), "menu.html" %> </li>
-      <li> <%= link_to t("layouts.public._header.blog"), "menu.html" %> </li>
-      <li> <%= link_to t("layouts.public._header.cart"), "menu.html" %> <i class="fa fa-shopping-cart" aria-hidden="true"></i></li>
+      <li><%= link_to t("layouts.public._header.home"), public_root_url, class: "active" %> </li>
+      <li></li>
+      <li class="cart-text"><%= render "layouts/public/cart_text" %></li>
+      <li>
+        <% if logged_in? %>
+          <div class="dropdown">
+            <%= link_to sanitize(current_user.full_name + content_tag(:span, "", class: "caret")), "#", {class: "btn btn-default dropdown-toggle", id: "dropdownMenu1", "data-toggle" => "dropdown", "aria-expanded" => true} %>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation"><%= link_to t(".profile"), admin_user_url(current_user) %></li>
+              <li role="presentation"><%= link_to t(".logout"), authentication_logout_path, method: :delete %></li>
+            </ul>
+          </div>
+        <% else %>
+          <%= link_to t(".login"), authentication_login_path %>
+        <% end %>
+      </li>
     </ul>
   </div>
     <div class="clearfix"> </div>
 </div>
-<!--//header-->

@@ -15,9 +15,9 @@ categories = Category.order(:created_at).take(3)
 end
 
 User.create!(full_name: "Tran Thi Mai Hoa",
-             email: "maihoa10091996@gmail.com",
-             password: "123456",
-             password_confirmation: "123456",
+             email: "maihoa100996@gmail.com",
+             password: "1234567",
+             password_confirmation: "1234567",
              address: "Nam Dinh",
              phone: "0974879729",
              sex: 1,
@@ -41,7 +41,7 @@ end
 
 users = User.order(:created_at).take(6)
 10.times do
-  date_order = DateTime.now
+  date_order = Date.today
   users.each {|user| user.orders.create!(date_order: date_order, total_price: 300, status: 1)}
 end
 

@@ -1,0 +1,29 @@
+<%= form_for(order_detail, url: public_update_cart_path) do |f| %>
+<div class="cart-header3">
+ <div class="close3"> </div>
+  <div class="cart-sec simpleCart_shelfItem">
+    <div class="cart-item cyc">
+
+    </div>
+    <div class="cart-item-info">
+      <h3>Name: <%= product.name %></h3>
+      <p>
+        <strong>Unit price:</strong> $<%= product.price.to_f %>
+      </p>
+      <p>
+        <strong>Quantity:</strong><%= f.number_field :quantity, value: quantity, class: "form-control ", min: 1 %>
+      </p>
+        <%= f.hidden_field :product_id, value: product.id %>
+      <p>
+        <strong>Total price:</strong> $<%= product.price * quantity %>
+      </p>
+      <div class="delivery">
+        <%= f.submit "Update", class: "btn btn-primary update_bt" %>
+        <%= link_to "Delete", "/public/delete_cart/" + product.id.to_s, {data: {confirm: "Are you sure you wish to delete the product '#{product.name}' from your cart?"}, method: :post, class: "btn btn-danger delete_bt_cart"} %>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>
+<% end %>

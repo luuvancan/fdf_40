@@ -14,7 +14,7 @@ admin:
   order:
     paid: "paid"
     unpaid: "unpaid"
-  number_items_per_page: 10
+  number_items_per_page: 12
 authentication:
   session:
     remember: "1"

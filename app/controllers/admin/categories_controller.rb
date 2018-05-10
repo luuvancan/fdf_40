@@ -58,7 +58,7 @@ module Admin
     end
 
     def load_categories_by_not_match_id_and_parent_id
-      @categories = Category.by_id_not_match(@category.id).by_parent_id_not_match_id(@category.id)
+      @categories = @category.load_cat_parent
       @categories = load_categories_add_no_parent @categories
     end
 
