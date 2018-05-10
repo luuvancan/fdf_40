@@ -12,6 +12,13 @@
  *
  *= require_self
  *= require font-awesome
- *= require_tree .
  */
 
+ @import 'bootstrap.css';
+ @import 'owl.carousel.css';
+ @import 'owl.theme.css';
+ @import 'products.scss';
+ @import 'public.css';
+ @import 'sb-admin.css';
+ @import 'style.css';
+ @import 'swipebox.css';

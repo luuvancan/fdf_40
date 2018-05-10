@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
   belongs_to :category
-  has_many :oder_detail, dependent: :destroy
+  has_many :order_details, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   mount_uploader :image, ImageUploader
   validates :name, presence: true
@@ -10,6 +11,8 @@ class Product < ApplicationRecord
                    greater_than_or_equal_to: Settings.admin.product.price_min}
 
   scope :by_name, ->(name){where name: name}
+  scope :search_by_name, ->(name){where("name like ?", "%#{name}%")}
+  scope :by_category_id, ->(category_id){where("category_id IN (?)", Category.find_by(id: category_id).branch_ids)}
   scope :by_id_not_match, ->(id){where.not id: id}
   default_scope ->{order(created_at: :desc)}
 

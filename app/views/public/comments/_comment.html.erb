@@ -1,0 +1,17 @@
+<div class="media">
+  <p class="pull-right"><small><%= comment.created_at %></small></p>
+  <a class="media-left" href="#">
+    <%= image_tag "avatar.jpg", class: "avatar" %>
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading user_name"><%= comment.user.full_name %></h4>
+    <p><%= comment.title %></p>
+    <p><%= comment.content %></p>
+    <% comment.rating.times do %>
+      <i class="fa fa-star-o" style="color: yellow"></i>
+    <% end %>
+    <% (5-comment.rating).times do %>
+      <i class="fa fa-star-o"></i>
+    <% end %>
+  </div>
+</div>

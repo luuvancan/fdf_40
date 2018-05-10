@@ -1,0 +1,78 @@
+<div class="blog" style="padding-top: 6em;" >
+  <div class="container">
+    <div class="agile-blog-grids">
+      <div class="col-md-6 agile-blog-grid-right" id="agile-blog-grid-right">
+        <div class="agile-blog-grid">
+          <div class="opinion">
+            <h3> <%= t "public.static_pages.comment" %> </h3>
+
+            <%= form_for @comment, url: public_comments_path do |f| %>
+              <%= render "shared/error_messages", object: f.object %>
+              <div class="rating">
+                <label><%= f.radio_button :rating, "5" %>☆</label>
+                <label><%= f.radio_button :rating, "4" %>☆</label>
+                <label><%= f.radio_button :rating, "3" %>☆</label>
+                <label><%= f.radio_button :rating, "2" %>☆</label>
+                <label><%= f.radio_button :rating, "1" %>☆</label>
+              </div>
+              <%= f.hidden_field :product_id, value: @product.id %>
+              <%= f.hidden_field :user_id, value: current_user.id %>
+              <%= f.text_field :title, placeholder: 'Subject' %>
+              <%= f.text_area :content, placeholder: 'Enter search term...' %>
+              <%= f.submit t("admin.products.form.submit"), class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="blog-left-grids col-md-6">
+        <div class="agile-blog-grid-left-img">
+          <%= image_tag @product.image.url if @product.image? %>
+        </div>
+        <div class="blog-left-right">
+          <div class="blog-left-right-top">
+            <h4> <%= @product.name %> </h4>
+          </div>
+          <% if @comments.present? %>
+            <div class="blog-left-right-top" style="color: red">
+              Rating: <%= @avg_rating %>
+            </div>
+          <% end %>
+          <div class="blog-left-right-bottom">
+            <p> <%=@product.description%> </p>
+            <%= form_for(@order_item, url: public_add_cart_path, remote: true) do |f| %>
+              <div class="input-group ">
+                <%= f.number_field :quantity, value: 1, class: "form-control ", min: 1 %> <br>
+                <%= f.hidden_field :product_id, value: @product.id %>
+                <div class="input-group-btn">
+                  <%= f.submit t("public.products.index.add_to_cart"), class: "btn btn-danger" %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div style="clear: left;"> </div>
+        <% if @comments.present? %>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8">
+                <div class="page-header">
+                  <h3><small class="pull-right"><%= @comments.count %> comments</small> Comments </h3>
+                </div>
+                <div class="comments-list">
+                  <%= render @comments %>
+                </div>
+              </div>
+          </div>
+        <% end %>
+      </div>
+  </div>
+</div>
+</div>
+<script>
+  $(document).ready(function() {
+    $('label').click(function() {
+      $('label').removeClass('active');
+      $(this).addClass('active');
+    });
+  });
+</script>
