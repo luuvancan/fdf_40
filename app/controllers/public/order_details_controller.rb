@@ -1,7 +1,6 @@
 module Public
   class OrderDetailsController < ApplicationController
-    layout "public/application"
-
+  layout "public/application"
     def create
       session[:order_items] = [] if session[:order_items].blank?
       @order_detail = OrderDetail.new order_detail_params

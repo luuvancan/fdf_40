@@ -7,4 +7,3 @@ class StaticPagesController < ApplicationController
     session[:total] = 0 unless session[:total]
   end
 end
-

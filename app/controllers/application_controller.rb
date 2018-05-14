@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   helper_method :load_product
 
-
   def load_product product_id
     Product.find_by id: product_id
   end
