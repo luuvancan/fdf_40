@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(version: 20180509035559) do
     t.integer "price"
     t.text "description"
     t.string "image"
+    t.integer "quantity"
+    t.integer "status"
     t.datetime "date_create"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

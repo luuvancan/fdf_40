@@ -1,4 +1,4 @@
-<% provide :title, t(".home") %>
+<% provide :title, t("home.index.title") %>
 <% if user_signed_in? && (can? :manage, :all) %>
   <%= render "admin/index/index" %>
 <% else %>

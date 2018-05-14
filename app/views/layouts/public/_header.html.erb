@@ -1,25 +1,28 @@
 <div class="header">
   <div class="logo">
-    <h1><%= link_to t("layouts.public._header.food"),"" %></h1>
+
   </div>
   <div class="top-nav">
-    <span class="menu"><%= image_tag("menu") %></span>
+    <span class="menu"> <%= link_to t("layouts.public._header.home"),root_url, class: "active" %> </span>
     <ul>
-      <li><%= link_to t("layouts.public._header.home"),root_url, class: "active" %> </li>
-      <li></li>
+            <li> <h1><%= link_to t("layouts.public._header.food"),"" %></h1> </li>
+      <li> <%= link_to t("layouts.public._header.home"),root_url, class: "active" %> </li>
+      <li> <%= link_to t("layouts.public._header.menu"),root_url %> </li>
       <li class="cart-text"><%= render "layouts/public/cart_text" %></li>
-      <li>
         <% if user_signed_in? %>
-          <div class="dropdown">
+
+          <li class = "li_dropdown"> <div class="dropdown">
             <%= link_to sanitize( current_user.email + content_tag(:span, "", class: "caret")), "#", {class: "btn btn-default dropdown-toggle", id: "dropdownMenu1", "data-toggle" => "dropdown", "aria-expanded" => true} %>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-              <li><%= link_to t(".Profile"), edit_user_registration_path %></li>
-              <li><%= link_to t(".logout"), destroy_user_session_path, method: :delete %></li>
+              <li> <%= link_to t(".Profile"), edit_user_registration_path %> </li>
+              <li> <%= link_to t(".logout"), destroy_user_session_path, method: :delete %></li>
             </ul>
-          </div>
+          </div> <li>
         <% else %>
-          <%= link_to t(".login"), user_session_path %>
-          <%= link_to t(".sing_up"), new_user_session_path %>
+
+          <li> <%= link_to t(".login"), user_session_path %> </li>
+          <li> <%= link_to t(".sing_up"), new_user_session_path %> </li>
+
         <% end %>
       </li>
     </ul>

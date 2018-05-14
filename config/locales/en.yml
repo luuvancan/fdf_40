@@ -1,4 +1,7 @@
 en:
+  home:
+    index:
+      title: "Home"
   layouts:
     public:
       application:
@@ -110,6 +113,7 @@ en:
         image: "Image"
         description: "Description"
         price: "Price"
+        quantity: "Quantity"
         submit: "Submit"
       edit:
         title: "Edit product"
