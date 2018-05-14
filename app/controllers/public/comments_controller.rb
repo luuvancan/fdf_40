@@ -6,9 +6,9 @@ module Public
       comment = Comment.new comment_params
       product = Product.find_by id: comment.product_id
       if comment.save
-        flash[:suceess] = "Add success"
+        flash[:suceess] = t "public.comments.create.suceess"
       else
-        flash[:danger] = "Add fail"
+        flash[:danger] = t "public.comments.create.fail"
       end
       redirect_to public_product_path(product)
     end

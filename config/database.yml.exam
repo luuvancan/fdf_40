@@ -1,0 +1,22 @@
+
+default: &default
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  socket: /var/run/mysqld/mysqld.sock
+
+development:
+  <<: *default
+  database: fdf_40_development
+  username: root
+  password: 123456
+test:
+  <<: *default
+  database: fdf_40_test
+
+production:
+  <<: *default
+  database: fdf_40_production
+  username: fdf_40
+  password: <%= ENV['FDF_40_DATABASE_PASSWORD'] %>

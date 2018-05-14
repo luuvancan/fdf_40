@@ -11,7 +11,8 @@ module Public
     end
 
     def index
-      @products = Product.by_category_id(1).paginate page: params[:page], per_page: Settings.admin.number_items_per_page
+      @products = Product.by_category_id(1)
+        .paginate page: params[:page], per_page: Settings.admin.number_items_per_page
       @order_item = OrderDetail.new
       @category = Category.find_by id: 1
     end

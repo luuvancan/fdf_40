@@ -4,7 +4,8 @@ module Admin
     before_action :admin_user, only: :destroy
 
     def index
-      @comments = Comment.all.paginate page: params[:page], per_page: Settings.admin.number_items_per_page
+      @comments = Comment.all
+        .paginate page: params[:page], per_page: Settings.admin.number_items_per_page
     end
 
     def destroy

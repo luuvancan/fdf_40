@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title><%= yield :title %></title>
+    <title> <%= yield :title %> </title>
     <%= render "layouts/admin/rails_default" %>
   </head>
   <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -9,10 +9,10 @@
     <div class="content-wrapper">
       <div class="container-fluid">
         <% flash.each do |message_type, message| %>
-          <div class="alert alert-<%= message_type %>"><%= message %></div>
+          <div class="alert alert-<%= message_type %>"> <%= message %> </div>
         <% end %>
         <% if @message.present? %>
-          <div class="alert alert-danger"><%= @message %></div>
+          <div class="alert alert-danger"> <%= @message %> </div>
         <% end %>
         <%= yield %>
       </div>

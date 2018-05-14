@@ -1,3 +1,4 @@
+
 default: &default
 default: &default
   adapter: mysql2
@@ -8,6 +9,8 @@ default: &default
 development:
   <<: *default
   database: fdf_40_development
+  username: root
+  password: 123456
 test:
   <<: *default
   database: fdf_40_test

@@ -33,11 +33,11 @@ Rails.application.configure do
     address: "smtp.gmail.com",
     port: 587,
     authentication: "plain",
-    user_name: "maihoa100996@gmail.com",
-    password: "trantrang100893",
+    user_name: "luuvancan.it@gmail.com",
+    password: "saobang4311",
     openssl_verify_mode: "none"
   }
-  config.action_mailer.default_url_options = { host: "localhost:3000" }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   config.action_mailer.perform_caching = false
 
