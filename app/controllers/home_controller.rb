@@ -1,5 +1,6 @@
-class StaticPagesController < ApplicationController
-  def home
+class HomeController < ApplicationController
+  layout "public/application"
+  def index
     @static_pages = Product.all.paginate page: params[:page], per_page: Settings.admin.number_items_per_page
     @products = Product.all
     @categories = Category.all
@@ -7,4 +8,3 @@ class StaticPagesController < ApplicationController
     session[:total] = 0 unless session[:total]
   end
 end
-

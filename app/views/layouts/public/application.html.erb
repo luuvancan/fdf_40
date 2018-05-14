@@ -1,12 +1,37 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= full_title(yield(:title)) %></title>
-    <%= render "layouts/public/rails_default" %>
-  </head>
-  <body>
-    <%= render "layouts/public/header" %>
-    <%= yield %>
-    <%= render "layouts/public/footer" %>
-  </body>
-</html>
+<% if user_signed_in? && current_user.role == "admin" %>
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <title><%= yield :title %></title>
+      <%= render "layouts/admin/rails_default" %>
+    </head>
+    <body class="fixed-nav sticky-footer bg-dark" id="page-top">
+      <%= render "layouts/admin/left_bar_admin" %>
+      <div class="content-wrapper">
+        <div class="container-fluid">
+          <% flash.each do |message_type, message| %>
+            <div class="alert alert-<%= message_type %>"><%= message %></div>
+          <% end %>
+          <% if @message.present? %>
+            <div class="alert alert-danger"><%= @message %></div>
+          <% end %>
+          <%= yield %>
+        </div>
+        <%= render "layouts/admin/footer_admin" %>
+      </div>
+    </body>
+  </html>
+<% else %>
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title><%= full_title(yield(:title)) %></title>
+      <%= render "layouts/public/rails_default" %>
+    </head>
+    <body>
+      <%= render "layouts/public/header" %>
+      <%= yield %>
+      <%= render "layouts/public/footer" %>
+    </body>
+  </html>
+<% end %>

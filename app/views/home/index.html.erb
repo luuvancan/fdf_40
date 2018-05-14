@@ -1,0 +1,9 @@
+<% provide :title, t(".home") %>
+<% if user_signed_in? && current_user.role == "admin" %>
+  <%= render "admin/index/index" %>
+<% else %>
+<%= render "home/banner_side" %>
+<%= render "home/our_services" %>
+<%= render "home/index" %>
+<% end %>
+

@@ -14,30 +14,15 @@ categories = Category.order(:created_at).take(3)
     price: 20, description: description)}
 end
 
-User.create!(full_name: "Tran Thi Mai Hoa",
-             email: "maihoa100996@gmail.com",
-             password: "1234567",
-             password_confirmation: "1234567",
-             address: "Nam Dinh",
+User.create!(full_name: "Luu Van Can",
+             email: "luuvancan.it@gmail.com",
+             password: "123456",
+             password_confirmation: "123456",
+             address: "Tran cao van",
              phone: "0974879729",
              sex: 1,
              role: 1)
 
-10.times do |n|
-  full_name = Faker::Name.name
-  email = "example-#{n+1}@railstutorial.org"
-  password = "password"
-  address = "Nam Dinh"
-  phone = "0974879729"
-  User.create!(full_name: full_name,
-               email: email,
-               password: password,
-               password_confirmation: password,
-               address: address,
-               phone: phone,
-               sex: 1,
-               role: 0)
-end
 
 users = User.order(:created_at).take(6)
 10.times do

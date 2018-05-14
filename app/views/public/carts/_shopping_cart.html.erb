@@ -8,7 +8,7 @@
       </h4>
       <% if session[:order_items].blank? || session[:order_items].count == 0 %>
         <p class="text-center">
-          <%= sanitize(t(".no_cart_items", link: link_to(t(".bo_back"), public_root_path))) %>.
+          <%= sanitize(t(".no_cart_items", link: link_to(t(".bo_back"), root_url))) %>.
         </p>
       <% else %>
         <div class="strip-line"></div>

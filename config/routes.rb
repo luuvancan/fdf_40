@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  devise_for :users
+  root "home#index"
+
   namespace :authentication do
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
@@ -19,7 +23,6 @@ Rails.application.routes.draw do
   end
 
   namespace :public do
-    root "static_pages#home"
     get "/home", to: "static_pages#home"
     get "/category/:id", to: "products#index"
     resources :products
