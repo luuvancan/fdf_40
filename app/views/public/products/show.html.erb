@@ -16,7 +16,9 @@
                 <label><%= f.radio_button :rating, "1" %>☆</label>
               </div>
               <%= f.hidden_field :product_id, value: @product.id %>
-              <%= f.hidden_field :user_id, value: current_user.id %>
+              <% if user_signed_in? %>
+                <%= f.hidden_field :user_id, value: current_user.id %>
+              <% end %>
               <%= f.text_field :title, placeholder: 'Subject' %>
               <%= f.text_area :content, placeholder: 'Enter search term...' %>
               <%= f.submit t("admin.products.form.submit"), class: "btn btn-primary" %>

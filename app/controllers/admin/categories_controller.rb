@@ -8,7 +8,6 @@ module Admin
     before_action :load_categories, only: %i(index)
     before_action :load_category_parent_cat_add, only: %i(new create)
     before_action :load_categories_by_not_match_id_and_parent_id, only: %i(edit update show)
-    before_action :admin_user, only: %i(edit update destroy)
 
     def index; end
 

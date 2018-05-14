@@ -103,6 +103,7 @@ en:
       new:
         title: "Add product"
         success_add_msg: "Add products success"
+        restore_delete_msg: "Restore products success"
         danger_add_msg: "Add products fail"
         success_delete_msg: "Delete products success"
         danger_delete_msg: "Delete products fail"
@@ -114,6 +115,7 @@ en:
         description: "Description"
         price: "Price"
         quantity: "Quantity"
+        status: "Status"
         submit: "Submit"
       edit:
         title: "Edit product"
@@ -127,6 +129,8 @@ en:
         id: "ID"
         name: "Name"
         cat_name: "Cat name"
+        quantity: "Quantity"
+        status: "Status"
         image: "Image"
         function: "Function"
         not_find_product: "Not find the product"

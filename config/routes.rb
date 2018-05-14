@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:index, :destroy]
     post "/products/search/", to: "products#search"
     get "/myorder", to: "orders#user_order"
+    get "/unlock/:id", to: "products#unlock"
   end
 
   namespace :public do

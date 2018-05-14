@@ -20,9 +20,7 @@
 <%= f.text_area :description %>
 
 <%= f.label t ".quantity" %>
-<%= f.text_field :quantity %>
-<%= f.options_for_select([["use", 1], ["not use", 0]]) :status %>
-
+<%= f.text_field :quantity,  type: "number" %>
 <%= f.submit t(".submit"), class: "btn btn-primary" %>
 
 <%= javascript_include_tag "validate_img.js", "data-turbolinks-track" => true %>

@@ -14,6 +14,7 @@ class Product < ApplicationRecord
   scope :search_by_name, ->(name){where("name like ?", "%#{name}%")}
   scope :by_category_id, ->(category_id){where("category_id IN (?)", Category.find_by(id: category_id).branch_ids)}
   scope :by_id_not_match, ->(id){where.not id: id}
+  scope :unlock, ->{where "status = 1 and quantity > 0"}
   default_scope ->{order(created_at: :desc)}
 
   private

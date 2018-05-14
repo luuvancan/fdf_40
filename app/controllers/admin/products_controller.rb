@@ -5,7 +5,6 @@ module Admin
     before_action :logged_in_user
     before_action :load_product, except: %i(index new create search)
     before_action :load_categories
-    before_action :admin_user, only: %i(edit update destroy)
 
     def index
       @products = Product.all.paginate page: params[:page], per_page: Settings.admin.number_items_per_page
@@ -50,8 +49,19 @@ module Admin
     end
 
     def destroy
-      if @product.destroy
+      product = Product.find(@product.id)
+      if product.update_attribute(:status, 0)
         flash[:success] = t "admin.products.new.success_delete_msg"
+      else
+        flash[:danger] = t "admin.products.new.danger_delete_msg"
+      end
+      redirect_to admin_products_url
+    end
+
+    def unlock
+      product = Product.find(params[:id])
+      if product.update_attribute(:status, 1)
+        flash[:success] = t "admin.products.new.restore_delete_msg"
       else
         flash[:danger] = t "admin.products.new.danger_delete_msg"
       end
@@ -61,7 +71,7 @@ module Admin
     private
 
     def product_params
-      params.require(:product).permit :name, :price, :image, :quantity,:status, :description, :category_id
+      params.require(:product).permit :name, :price, :image, :quantity, :status, :description, :category_id
     end
 
     def load_categories

@@ -33,6 +33,7 @@ gem "i18n-js"
 # gem "font-awesome-sass", "~> 5.0.9"
 group :development, :test do
   gem "selenium-webdriver"
+  gem "byebug"
 end
 
 group :development do

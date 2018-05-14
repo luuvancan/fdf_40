@@ -28,18 +28,48 @@
           <th><%= t ".id" %></th>
           <th><%= t ".name" %></th>
           <th><%= t ".cat_name" %></th>
+          <th><%= t ".quantity" %></th>
           <th><%= t ".price" %></th>
           <th class="image"><%= t ".image" %></th>
+          <th><%= t ".status" %></th>
           <th class="function"><%= t ".function" %></th>
         </tr>
         <%
           @products.each do |product|
         %>
-        <tr>
-          <td><%= product.id %></td>
-          <td><%= link_to product.name, admin_product_path(product) %></td>
-          <td><%= product.category.name %></td>
-          <td><%= product.price %></td>
+        <% if product.quantity < 2 %>
+
+          <tr style="background: #ea7781">
+            <td> <%= product.id %></td>
+            <td> <%= link_to product.name, admin_product_path(product) %></td>
+            <td> <%= product.category.name %></td>
+            <td> <%= product.quantity %> </td>
+            <td> <%= product.price %></td>
+            <td class="image">
+              <% if product.image? %>
+                <%= image_tag product.image.url %>
+              <% else %>
+                <%= image_tag "no-image.png" %>
+              <% end %>
+            </td>
+            <td> <%= product.status %></td>
+            <td class="function">
+              <%= link_to image_tag("edit.jpg", alt: t(".edit")), edit_admin_product_path(product) %> |
+              <% if product.status == 1  %>
+                <%= link_to image_tag("delete.jpg", alt: t(".delete")), admin_product_path(product), method: :delete, data: {confirm: t(".confirm_delete")} %>
+              <% else %>
+                <%= link_to "Unlock", admin_path(product.id)  %>
+              <% end %>
+
+            </td>
+          </tr>
+        <% else %>
+          <tr>
+          <td> <%= product.id %></td>
+          <td> <%= link_to product.name, admin_product_path(product) %></td>
+          <td> <%= product.category.name %></td>
+          <td> <%= product.quantity %> </td>
+          <td> <%= product.price %></td>
           <td class="image">
             <% if product.image? %>
               <%= image_tag product.image.url %>
@@ -47,11 +77,17 @@
               <%= image_tag "no-image.png" %>
             <% end %>
           </td>
+          <td> <%= product.status %></td>
           <td class="function">
             <%= link_to image_tag("edit.jpg", alt: t(".edit")), edit_admin_product_path(product) %> |
-            <%= link_to image_tag("delete.jpg", alt: t(".delete")), admin_product_path(product), method: :delete, data: {confirm: t(".confirm_delete")} %>
+              <% if product.status == 1  %>
+                <%= link_to image_tag("delete.jpg", alt: t(".delete")), admin_product_path(product), method: :delete, data: {confirm: t(".confirm_delete")} %>
+              <% else %>
+                <%= link_to "Unlock", admin_path(product.id)  %>
+              <% end %>
           </td>
         </tr>
+        <% end %>
         <%
           end
         %>

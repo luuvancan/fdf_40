@@ -1,7 +1,6 @@
 module Public
   class ProductsController < ApplicationController
     layout "public/application"
-
     def show
       @product = Product.find(params[:id])
       @comment = Comment.new

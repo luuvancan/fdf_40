@@ -21,10 +21,11 @@
           </div>
           <div class="col-md-6 agileits-special-info">
             <h4 class="h4_name"><%= p.name %></h4>
+            <h4>Quantity: <%= p.quantity %></h4>
                 <div class="col-md-12">
                 <%= form_for(@order_item, url: public_add_cart_path, remote: true) do |f| %>
                   <div class="input-group ">
-                    <%= f.number_field :quantity, value: 1, class: "form-control ", min: 1 %> <br>
+                    <%= f.number_field :quantity, value: 1, class: "form-control ", min: 1, max: p.quantity %> <br>
                     <div class="input-group-btn">
                       <%= f.hidden_field :product_id, value: p.id %>
                       <%= f.submit t("public.products.index.add_to_cart"), class: "btn btn-danger" %>
