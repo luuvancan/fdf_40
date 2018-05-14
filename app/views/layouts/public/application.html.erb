@@ -1,4 +1,4 @@
-<% if user_signed_in? && current_user.role == "admin" %>
+<% if user_signed_in? && (can? :manage, :all) %>
   <!DOCTYPE html>
   <html lang="en">
     <head>
