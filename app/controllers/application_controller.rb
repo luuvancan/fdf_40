@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   def logged_in_user
     return if user_signed_in?
     flash[:danger] = t "authentication.sessions.message_not_login"
-    redirect_to authentication_login_url
+    redirect_to user_session_path
   end
 
   def admin_user

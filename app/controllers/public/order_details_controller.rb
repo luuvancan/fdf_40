@@ -14,6 +14,8 @@ module Public
       end
       session[:order_items] << [@order_detail.quantity, @order_detail.product_id] if check.zero?
       session[:total] += product.price * @order_detail.quantity
+      product.quantity -= @order_detail.quantity
+      product.update_attribute(:quantity , product.quantity)
       respond_to do |format|
         format.html{redirect_to root_url}
         format.js
