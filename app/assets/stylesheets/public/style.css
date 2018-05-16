@@ -21,8 +21,6 @@ html, body{
     padding: 0em 0 11em 0;
 }
 .header {
-	position: relative;
-  padding: 20px 0;
   background: #FFF;
   box-shadow: 0 2px 3px #e4e4e4;
 }
@@ -2295,7 +2293,7 @@ margin-top:50px;
   transition: color 0.2s ease-in-out;
 }
 .cart-item-info {
-  width: 75%;
+  width: 65%;
   float: left;
 }
 .cart-item-info h3 {
@@ -2425,7 +2423,7 @@ a.simpleCart_empty {
 }
 
 .input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group{
-  margin-right: 65px;
+
 }
 
 .form-control{
@@ -2515,6 +2513,7 @@ a.simpleCart_empty {
   position: absolute;
   top: 74px;
   padding-left: 20px;
+  width: 100%;
 }
 
 .blog {
@@ -2561,4 +2560,10 @@ a.simpleCart_empty {
 }
 .dropdown{
   margin-left: 50px;
+}
+.checkout_bt_cart{
+  float: right;
+}
+.bt_cart{
+  width: 198px;
 }

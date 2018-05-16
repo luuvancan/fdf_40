@@ -5,6 +5,9 @@ class Product < ApplicationRecord
 
   mount_uploader :image, ImageUploader
   validates :name, presence: true
+  validates :salary, numericality: { other_than: 0 }
+
+
   validates :description, presence: true
   validates :price, presence: true,
     numericality: {less_than: Settings.admin.product.price_max,
