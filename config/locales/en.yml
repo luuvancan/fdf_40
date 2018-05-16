@@ -1,4 +1,7 @@
 en:
+  home:
+    _index:
+      today: "Today Specials"
   layouts:
     public:
       application:
@@ -31,6 +34,10 @@ en:
         title: "Cart"
       shopping_cart:
         no_cart_items: "There are no Details in your shopping cart.</br>  Please %{link} and add some Details to your cart"
+    comments:
+      create:
+        success: "Add success"
+        fail: "Add fail"
     orders:
       success: "Add to cart successful"
     admin:
@@ -58,6 +65,8 @@ en:
     comments:
       index:
         title: "Comments"
+        not_comment: "Not  has comment"
+
     left_bar_admin:
       profile: "Profile"
       users: "Users"

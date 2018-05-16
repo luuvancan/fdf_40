@@ -1,8 +1,7 @@
 <div class="special">
   <div class="container">
     <div class="services-info">
-      <h3>Today Specials</h3>
-      <p>Pellentesque ultrices tincidunt risus in pellentesque. Morbi facilisis consectetur nunc in luctus.</p>
+      <h3> <%= t "home._index.today" %> </h3>
     </div>
     <div class="special-grids">
       <% @static_pages.each do |p| %>
@@ -39,7 +38,7 @@
       <div class="clearfix"> </div>
     </div>
     <div class="clearfix"> </div>
-    <%= will_paginate %>
+    <%= will_paginate @static_pages %>
   </div>
 </div>
 

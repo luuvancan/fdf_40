@@ -1,7 +1,7 @@
 <div class="special" style="padding-top: 6em">
   <div class="container">
     <div class="services-info">
-      <h3><%= @category.name %></h3>
+      <h3> <%= @category.name %> </h3>
     </div>
     <div class="special-grids">
       <% @products.each do |p| %>
@@ -10,7 +10,7 @@
             <%= image_tag(p.image.url, class: "col-md-6 w3ls-special-img wthree-img") if p.image? %>
             <div class="wpf-demo-6">
               <div class="w3ls-special-text">
-                <p><sub>$</sub><%= p.price %></p>
+                <p><sub>$</sub> <%= p.price %> </p>
               </div>
               <figcaption class="view-caption">
                 <h4>View detail product</h4>
@@ -19,7 +19,7 @@
             </div>
           </div>
           <div class="col-md-6 agileits-special-info">
-            <h4 class="h4_name"><%= p.name %></h4>
+            <h4 class="h4_name"> <%= p.name %> </h4>
                 <div class="col-md-12">
                 <%= form_for(@order_item, url: public_add_cart_path, remote: true) do |f| %>
                   <div class="input-group ">

@@ -8,13 +8,15 @@ module Admin
     before_action :admin_user, only: %i(edit update destroy)
 
     def index
-      @products = Product.all.paginate page: params[:page], per_page: Settings.admin.number_items_per_page
+      @products = Product.all
+        .paginate page: params[:page], per_page: Settings.admin.number_items_per_page
     end
 
     def search
       information = params[:search][:information]
       cat_id = params[:search][:cat_id]
-      @products = Product.search_by_name(information).by_category_id(cat_id).paginate page: params[:page], per_page: Settings.admin.number_items_per_page
+      @products = Product.search_by_name(information).by_category_id(cat_id)
+        .paginate page: params[:page], per_page: Settings.admin.number_items_per_page
       render :index
     end
 
@@ -66,6 +68,9 @@ module Admin
 
     def load_categories
       @categories = Category.all
+      return if @categories.present?
+      flash[:danger] = t "admin.categories.index.not_find_cat"
+      redirect_to admin_products_url
     end
 
     def load_product

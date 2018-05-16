@@ -6,7 +6,8 @@ module Admin
     before_action :load_order_details, except: %i(index destroy)
 
     def index
-      @orders = Order.all.paginate page: params[:page], per_page: Settings.admin.number_items_per_page
+      @orders = Order.all
+        .paginate page: params[:page], per_page: Settings.admin.number_items_per_page
     end
 
     def edit; end
@@ -34,7 +35,8 @@ module Admin
     end
 
     def user_order
-      @orders = Order.by_user(current_user.id).paginate page: params[:page], per_page: Settings.admin.number_items_per_page
+      @orders = Order.by_user(current_user.id)
+        .paginate page: params[:page], per_page: Settings.admin.number_items_per_page
     end
 
     private

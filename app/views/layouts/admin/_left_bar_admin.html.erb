@@ -6,7 +6,7 @@
   <div class="collapse navbar-collapse" id="navbarResponsive">
     <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
       <li class="nav-item" data-toggle="tooltip" data-placement="right">
-        <%= link_to sanitize("<i class='fa fa-user-circle'></i> " + content_tag(:span, t(".profile"), class: "nav-link-text")), admin_user_url(current_user), class: "nav-link" %>
+        <%= link_to sanitize("<i class='fa fa-user-circle'></i> " + content_tag(:span, t(".profile"), class: "nav-link-text")),edit_user_registration_path, class: "nav-link" %>
       </li>
       <li class="nav-item" data-toggle="tooltip" data-placement="right">
         <%= link_to sanitize("<i class='fa fa-snowflake-o'></i> " + content_tag(:span, t(".your_order"), class: "nav-link-text")), admin_myorder_path, class: "nav-link" %>
@@ -29,7 +29,7 @@
     </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <%= link_to sanitize("<i class='fa fa-fw fa-sign-out'></i>" + t(".logout")), authentication_logout_path, method: :delete, class: "nav-link", data: {confirm: t("authentication.sessions.logout.confirm")} %>
+        <%= link_to sanitize("<i class='fa fa-fw fa-sign-out'></i>" + t(".logout")),  destroy_user_session_path, method: :delete, class: "nav-link", data: {confirm: t("authentication.sessions.logout.confirm")} %>
       </li>
     </ul>
   </div>

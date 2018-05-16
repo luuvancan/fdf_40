@@ -2437,7 +2437,7 @@ a.simpleCart_empty {
 }
 
 .form-control{
-  width: 20%;
+  width: 100%;
   margin-left: 0px;
   margin-top: 10px;
 }
@@ -2567,3 +2567,11 @@ a.simpleCart_empty {
 .avatar {
   width: 100px;
 }
+
+.form_register{
+  height: 550px;
+}
+.sign_in_form{
+  height: 575px;
+}
+

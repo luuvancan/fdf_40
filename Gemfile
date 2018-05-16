@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem "rails", "~> 5.1.6"
+gem "devise"
 gem "mysql2", ">= 0.3.18", "< 0.6.0"
 gem "i18n-js"
 gem "bcrypt", "3.1.11"

@@ -1,6 +1,6 @@
-  <div class="cart-Details">
+<div class="cart-Details">
     <div class="container">
-      <h2><%= t ".my_shopping_cart" %></h2>
+      <h2> <%= t ".my_shopping_cart" %> </h2>
       <h4 style="color: green; text-align: center">
         <% flash.each do |message_type, message| %>
           <%= message %>
@@ -8,7 +8,7 @@
       </h4>
       <% if session[:order_items].blank? || session[:order_items].count == 0 %>
         <p class="text-center">
-          <%= sanitize(t(".no_cart_items", link: link_to(t(".bo_back"), public_root_path))) %>.
+          <%= sanitize(t(".no_cart_items", link: link_to(t(".bo_back"), root_url))) %>.
         </p>
       <% else %>
         <div class="strip-line"></div>
@@ -27,8 +27,8 @@
           <% end %>
           </div>
         </div>
-        <h4 style="float: left;"><strong><%= t ".total_order" %>: </strong> $<%= session[:total] %></h4>
-        <h4 style="float: right;"><strong><%= link_to t(".checkout"),  public_checkout_path, method: :post %></strong></h4>
+        <h4 style="float: left;"><strong> <%= t ".total_order" %>: </strong> $<%= session[:total] %> </h4>
+        <h4 style="float: right;"><strong> <%= link_to t(".checkout"),  public_checkout_path, method: :post %> </strong></h4>
         <% end %>
     </div>
     <div class="clearfix"></div>
