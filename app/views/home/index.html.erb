@@ -1,5 +1,5 @@
 <% provide :title, t(".home") %>
-<% if user_signed_in? && current_user.admin? %>
+<% if user_signed_in? && (can? :manage, :all) %>
   <%= render "admin/index/index" %>
 <% else %>
 <%= render "home/banner_side" %>

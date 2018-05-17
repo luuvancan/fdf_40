@@ -10,6 +10,7 @@ capybara-*.html
 /spec/tmp
 public/uploads/
 public/javascripts/
+*.exam
 *.orig
 rerun.txt
 pickle-email-*.html

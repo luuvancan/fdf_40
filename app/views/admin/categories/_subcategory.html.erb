@@ -2,7 +2,7 @@
   <tr>
     <td><%= sub.id %></td>
     <td><%= link_to sub.name, edit_admin_category_path(sub) %></td>
-    <td><%= sub.parent %></td>
+    <td> <%= sub.parent %> </td>
     <td class="function">
       <%= link_to image_tag("edit.jpg", alt: t(".edit")), edit_admin_category_path(sub) %> |
       <%= link_to image_tag("delete.jpg", alt: t(".delete")), admin_category_path(sub), method: :delete, data: {confirm: t("admin.categories.index.confirm_delete")} %>

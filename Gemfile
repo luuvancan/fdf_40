@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem "rails", "~> 5.1.6"
+gem "cancancan", "~> 1.10"
 gem "devise"
 gem "mysql2", ">= 0.3.18", "< 0.6.0"
 gem "i18n-js"
@@ -29,7 +30,6 @@ gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
 gem "rubocop", require: false
 gem "i18n-js"
-# gem 'font-awesome-sass', '~> 5.0.9'
 group :development, :test do
   gem "selenium-webdriver"
 end
